@@ -32,8 +32,10 @@ public class Bedroom {
     }
 
     public void addGuest(Guest guest) {
-        if(this.hasCapacity()) {
             this.guests.add(guest);
-        }
+    }
+
+    public void clearRoom() {
+        this.guests.clear();
     }
 }

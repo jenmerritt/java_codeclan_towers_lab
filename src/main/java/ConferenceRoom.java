@@ -21,9 +21,7 @@ public class ConferenceRoom {
     }
 
     public void addGuest(Guest guest) {
-        if(this.hasCapacity()) {
             this.guests.add(guest);
-        }
     }
 
     public boolean hasCapacity() {

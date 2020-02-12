@@ -40,9 +40,9 @@ public class BedroomTest {
     }
 
     @Test
-    public void can_not_add_guest_if_room_over_capacity(){
+    public void can_clear_room(){
         bedroom.addGuest(ryanReynolds);
-        bedroom.addGuest(celineDion);
-        assertEquals(1, bedroom.getNumberOfGuests());
+        bedroom.clearRoom();
+        assertEquals(0, bedroom.getNumberOfGuests());
     }
 }
