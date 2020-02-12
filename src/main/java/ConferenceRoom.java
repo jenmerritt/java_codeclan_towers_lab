@@ -21,6 +21,12 @@ public class ConferenceRoom {
     }
 
     public void addGuest(Guest guest) {
-        this.guests.add(guest);
+        if(this.hasCapacity()) {
+            this.guests.add(guest);
+        }
+    }
+
+    public boolean hasCapacity() {
+        return this.getNumberOfGuests() < this.capacity;
     }
 }

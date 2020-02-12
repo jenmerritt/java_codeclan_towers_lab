@@ -12,7 +12,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(2, 1, "Twin");
+        bedroom = new Bedroom(1, 1, "Single");
         ryanReynolds = new Guest("Ryan Reynolds");
         shaniaTwain = new Guest("Shania Twain");
         celineDion = new Guest("Celine Dion");
@@ -20,7 +20,7 @@ public class BedroomTest {
 
     @Test
     public void can_get_capacity(){
-        assertEquals(2, bedroom.getCapacity());
+        assertEquals(1, bedroom.getCapacity());
     }
 
     @Test
@@ -31,6 +31,18 @@ public class BedroomTest {
     @Test
     public void can_add_guest(){
         bedroom.addGuest(ryanReynolds);
+        assertEquals(1, bedroom.getNumberOfGuests());
+    }
+
+    @Test
+    public void empty_room_has_capacity(){
+        assertEquals(true, bedroom.hasCapacity());
+    }
+
+    @Test
+    public void can_not_add_guest_if_room_over_capacity(){
+        bedroom.addGuest(ryanReynolds);
+        bedroom.addGuest(celineDion);
         assertEquals(1, bedroom.getNumberOfGuests());
     }
 }

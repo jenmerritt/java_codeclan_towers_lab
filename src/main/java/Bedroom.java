@@ -23,7 +23,17 @@ public class Bedroom {
         return this.guests.size();
     }
 
+    public boolean isGuestInRoom(Guest guest){
+        return this.guests.contains(guest);
+    }
+
+    public boolean hasCapacity(){
+        return this.getNumberOfGuests() < this.capacity;
+    }
+
     public void addGuest(Guest guest) {
-        this.guests.add(guest);
+        if(this.hasCapacity()) {
+            this.guests.add(guest);
+        }
     }
 }

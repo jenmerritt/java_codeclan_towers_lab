@@ -20,7 +20,7 @@ public class ConferenceRoomTest {
 
     @Test
     public void can_get_capacity(){
-        assertEquals(5, theMapleLounge.getCapacity());
+        assertEquals(2, theMapleLounge.getCapacity());
     }
 
     @Test
@@ -32,6 +32,19 @@ public class ConferenceRoomTest {
     public void can_add_guest(){
         theMapleLounge.addGuest(shaniaTwain);
         theMapleLounge.addGuest(celineDion);
+        assertEquals(2, theMapleLounge.getNumberOfGuests());
+    }
+
+    @Test
+    public void empty_room_has_capacity(){
+        assertEquals(true, theMapleLounge.hasCapacity());
+    }
+
+    @Test
+    public void can_not_add_guest_if_room_over_capacity(){
+        theMapleLounge.addGuest(celineDion);
+        theMapleLounge.addGuest(shaniaTwain);
+        theMapleLounge.addGuest(ryanReynolds);
         assertEquals(2, theMapleLounge.getNumberOfGuests());
     }
 }
