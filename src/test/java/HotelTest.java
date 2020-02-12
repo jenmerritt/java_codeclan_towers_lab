@@ -16,8 +16,8 @@ public class HotelTest {
     @Before
     public void before(){
         theNorth = new Hotel();
-        bedroom1 = new Bedroom(1, 1, "single");
-        theSuite = new Bedroom(3, 99, "suite");
+        bedroom1 = new Bedroom(1, 1, "single", 20);
+        theSuite = new Bedroom(3, 99, "suite", 100);
         theMapleLounge = new ConferenceRoom(2, "The Maple Lounge");
         ryanReynolds = new Guest("Ryan Reynolds");
         shaniaTwain = new Guest("Shania Twain");
@@ -63,6 +63,12 @@ public class HotelTest {
         theNorth.checkGuestIntoConferenceRoom(theMapleLounge, shaniaTwain);
         theNorth.checkGuestOutOfConference(theMapleLounge, shaniaTwain);
         assertEquals(0, theMapleLounge.getNumberOfGuests());
+    }
+
+    @Test
+    public void can_add_booking_to_list_of_booking(){
+        theNorth.createBooking(theSuite, 3, ryanReynolds);
+        assertEquals(1, theNorth.getNumberOfBookings());
     }
 
 }

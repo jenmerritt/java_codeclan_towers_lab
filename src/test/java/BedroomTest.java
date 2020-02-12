@@ -12,7 +12,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(1, 1, "Single");
+        bedroom = new Bedroom(1, 1, "Single", 20);
         ryanReynolds = new Guest("Ryan Reynolds");
         shaniaTwain = new Guest("Shania Twain");
         celineDion = new Guest("Celine Dion");
@@ -21,6 +21,11 @@ public class BedroomTest {
     @Test
     public void can_get_capacity(){
         assertEquals(1, bedroom.getCapacity());
+    }
+
+    @Test
+    public void can_get_rate(){
+        assertEquals(20, bedroom.getRate());
     }
 
     @Test
