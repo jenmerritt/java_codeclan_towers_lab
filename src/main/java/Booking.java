@@ -9,4 +9,12 @@ public class Booking {
         this.nights = nights;
         this.guest = guest;
     }
+
+    public Bedroom getBedroom(){
+        return this.bedroom;
+    }
+
+    public Integer getNights(){
+        return this.nights;
+    }
 }

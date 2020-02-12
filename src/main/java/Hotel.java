@@ -41,4 +41,8 @@ public class Hotel {
         Booking newBooking = new Booking(bedroom, nights, guest);
         this.bookings.add(newBooking);
     }
+
+    public int getBill(Booking booking){
+        return booking.getBedroom().getRate() * booking.getNights();
+    }
 }
