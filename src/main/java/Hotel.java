@@ -25,4 +25,10 @@ public class Hotel {
     public void checkOutAllGuests(Bedroom bedroom) {
         bedroom.clearRoom();
     }
+
+    public void checkGuestOutOfConference(ConferenceRoom conferenceRoom, Guest guest) {
+        if(conferenceRoom.isGuestInRoom(guest)){
+            conferenceRoom.removeGuest(guest);
+        }
+    }
 }

@@ -27,4 +27,12 @@ public class ConferenceRoom {
     public boolean hasCapacity() {
         return this.getNumberOfGuests() < this.capacity;
     }
+
+    public boolean isGuestInRoom(Guest guest){
+        return this.guests.contains(guest);
+    }
+
+    public void removeGuest(Guest guest) {
+        this.guests.remove(guest);
+    }
 }

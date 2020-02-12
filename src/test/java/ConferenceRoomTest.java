@@ -41,10 +41,13 @@ public class ConferenceRoomTest {
     }
 
     @Test
-    public void can_not_add_guest_if_room_over_capacity(){
-        theMapleLounge.addGuest(celineDion);
+    public void guest_is_in_room(){
         theMapleLounge.addGuest(shaniaTwain);
-        theMapleLounge.addGuest(ryanReynolds);
-        assertEquals(2, theMapleLounge.getNumberOfGuests());
+        assertEquals(true, theMapleLounge.isGuestInRoom(shaniaTwain));
+    }
+
+    @Test
+    public void guest_is_not_in_room(){
+        assertEquals(false, theMapleLounge.isGuestInRoom(shaniaTwain));
     }
 }

@@ -23,10 +23,6 @@ public class Bedroom {
         return this.guests.size();
     }
 
-    public boolean isGuestInRoom(Guest guest){
-        return this.guests.contains(guest);
-    }
-
     public boolean hasCapacity(){
         return this.getNumberOfGuests() < this.capacity;
     }

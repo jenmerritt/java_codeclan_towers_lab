@@ -58,4 +58,11 @@ public class HotelTest {
         assertEquals(0, bedroom1.getNumberOfGuests());
     }
 
+    @Test
+    public void check_out_removes_guest_from_conference_room__guest_exists(){
+        theNorth.checkGuestIntoConferenceRoom(theMapleLounge, shaniaTwain);
+        theNorth.checkGuestOutOfConference(theMapleLounge, shaniaTwain);
+        assertEquals(0, theMapleLounge.getNumberOfGuests());
+    }
+
 }
